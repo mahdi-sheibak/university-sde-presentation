@@ -1,16 +1,21 @@
 {
-  "name": "sde-presentation",
+  "name": "university-sde-presentation",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "build": "slidev build presentation.md",
+    "dev": "slidev presentation.md",
+    "export:md": "slidev export presentation.md --format md --output export/md/presentation",
+    "export:pdf": "slidev export presentation.md --output export/pdf/presentation.pdf",
+    "export:png": "slidev export presentation.md --format png --output export/png",
+    "format": "prettier --write **/*.{json,vue,md,ts}",
+    "remote": "slidev presentation.md --remote=your_password",
+    "build:downloadable-pdf": "slidev build --download"
   },
   "dependencies": {
-    "@slidev/cli": "^0.50.0-beta.8",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.13"
+    "@slidev/cli": "0.50.0-beta.10",
+    "@slidev/theme-default": "0.25.0",
+    "@slidev/theme-seriph": "0.25.0",
+    "vue": "3.5.13"
   }
 }
